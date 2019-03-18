@@ -41,7 +41,7 @@ public class UpdateServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            //  セッションスコープからメッセージのIDを取得して該当のIDのメッセージ１件のみをデータベースから取得
+            //  セッションスコープからタスクのIDを取得して該当のIDのタスク１件のみをデータベースから取得
             Task t = em.find(Task.class, (Integer)(request.getSession().getAttribute("task_id")));
 
             //  フォームの内容をタスクの内容(content)に上書き

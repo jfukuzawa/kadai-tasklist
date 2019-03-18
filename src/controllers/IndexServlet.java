@@ -48,8 +48,8 @@ public class IndexServlet extends HttpServlet {
 
         //  最大件数と開始位置を指定してメッセージを取得
         List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class)
-                                                        .setFirstResult(15 * (page - 1))
-                                                        .setMaxResults(15)
+                                                        .setFirstResult(10 * (page - 1))
+                                                        .setMaxResults(10)
                                                         .getResultList();
 
         //  全件数を取得
